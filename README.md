@@ -1,3 +1,12 @@
+project: Arcade Game (final project)
+course: Object-Oriented JavaScript
+instructor: Marcus Phillips
+platform: Udacity
+
+Forked by Botmasher (Joshua R) to complete the final project for Udacity OO JS.
+
+Original Readme below:
+
 frontend-nanodegree-arcade-game
 ===============================
 

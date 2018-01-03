@@ -118,12 +118,12 @@ var Engine = (function(global) {
          * for that particular row of the game level.
          */
         var rowImages = [
-                'images/water-block.png',   // Top row is water
-                'images/stone-block.png',   // Row 1 of 3 of stone
-                'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/water-block-sketch.png',   // Top row is water
+                'images/stone-block-sketch.png',   // Row 1 of 3 of stone
+                'images/stone-block-sketch.png',   // Row 2 of 3 of stone
+                'images/stone-block-sketch.png',   // Row 3 of 3 of stone
+                'images/grass-block-sketch.png',   // Row 1 of 2 of grass
+                'images/grass-block-sketch.png'    // Row 2 of 2 of grass
             ],
             numRows = 6,
             numCols = 5,
@@ -186,23 +186,23 @@ var Engine = (function(global) {
      * all of these images are properly loaded our game will start.
      */
     Resources.load([
-        'images/stone-block.png',
-        'images/water-block.png',
-        'images/grass-block.png',
-        'images/enemy-bug.png',
-        'images/char-boy.png',
-        'images/char-cat-girl.png',
-        'images/char-horn-girl.png',
-        'images/char-pink-girl.png',
-        'images/char-princess-girl.png',
-        'images/gem-blue.png',
-        'images/gem-gold.png',
-        'images/gem-green.png',
-        'images/heart.png',
-        'images/key.png',
-        'images/rock.png',
-        'images/selector.png',
-        'images/star.png'
+        'images/stone-block-sketch.png',
+        'images/water-block-sketch.png',
+        'images/grass-block-sketch.png',
+        'images/enemy-bug-sketch.png',
+        'images/char-boy-sketch.png',
+        'images/char-cat-sketch.png',
+        'images/char-girl-sketch.png',
+        'images/char-pink-sketch.png',
+        'images/char-princess-sketch.png',
+        'images/gem-blue-sketch.png',
+        'images/gem-gold-sketch.png',
+        'images/gem-green-sketch.png',
+        'images/heart-sketch.png',
+        'images/key-sketch.png',
+        'images/rock-sketch.png',
+        'images/selector-sketch.png',
+        'images/star-sketch.png'
     ]);
     Resources.onReady(init);
 

@@ -89,7 +89,7 @@ GameObject.prototype.outOfBounds = function () {
  */
 var Enemy = function (xPos, yPos, velocity) {
     // shared enemy sprite, uses resources.js
-    var spriteURL = 'images/enemy-bug.png';
+    var spriteURL = 'images/enemy-bug-sketch.png';
 
     // enemy movement direction (move right)
     var xAxis=1, yAxis=0;
@@ -139,17 +139,17 @@ Player.prototype.update = function(deltaTime) {
     this.outOfBounds() ? this.die() : 0;
 
     // show the current score
-    document.getElementById("game_score").innerHTML = "Score: "+gameController.score;
+    document.getElementById("game-score").innerHTML = "Score: "+gameController.score;
 
     // reset the movement axes
     this.horiz = 0, this.vert = 0;
 };
 
 Player.prototype.displayLives = function() {
-    heartImg = "<img src='images/heart.png'>";
-    document.getElementById("game_lives").innerHTML = "";
+    heartImg = "<img src='images/heart-sketch.png'>";
+    document.getElementById("game-lives").innerHTML = "";
     for (var i = 0; i < this.lives; i++) {
-        document.getElementById("game_lives").innerHTML += heartImg;
+        document.getElementById("game-lives").innerHTML += heartImg;
     }
 };
 
@@ -164,7 +164,7 @@ Player.prototype.reachedGoal = function () {
 Player.prototype.win = function () {
     
     // notify the div
-    document.getElementById("game_notes").innerHTML = "+10 : Reached Water!";
+    document.getElementById("game-notes").innerHTML = "+10 : Reached Water!";
     
     // play goal sfx
     var sfx = new Audio('audio/goal.wav');
@@ -177,7 +177,7 @@ Player.prototype.win = function () {
 // Admit defeat
 Player.prototype.die = function () {
     
-    document.getElementById("game_notes").innerHTML = "-30 : OUCH!";
+    document.getElementById("game-notes").innerHTML = "-30 : OUCH!";
     if (gameController.score > 30) {
         gameController.score -= 30;
     } else {
@@ -230,7 +230,7 @@ Player.prototype.handleInput = function (key) {
  */
 var Pickup = function (xPos, yPos) {
     // list of sprites and point values
-    var sprites = ['images/gem-green.png','images/gem-blue.png','images/gem-gold.png'];
+    var sprites = ['images/gem-green-sketch.png','images/gem-blue-sketch.png','images/gem-gold-sketch.png'];
     var values = [5,10,20];
     // random value for choosing from above lists
     var choice = Math.floor(Math.random()*3);
@@ -251,7 +251,7 @@ Pickup.prototype.update = function(deltaTime) {
     if (this.active && this.collidedWith(player,55)) {
         this.active = false;
         gameController.score += this.points;
-        document.getElementById("game_notes").innerHTML = "+"+this.points+"! What a GEM!";
+        document.getElementById("game-notes").innerHTML = "+"+this.points+"! What a GEM!";
         // play sfx
         var sfx = new Audio('audio/gem.wav');
         sfx.play();
@@ -277,7 +277,7 @@ var GameController = function () {
     this.goalY = 375;
     this.goalPoints = 100;
     this.goalOpen = false;
-    this.goal = 'images/selector.png';
+    this.goal = 'images/selector-sketch.png';
 
     // listen for keypress and send to Player's handleInput(key)
     document.addEventListener('keyup', function(e) {
@@ -297,7 +297,7 @@ GameController.prototype.update = function (deltaTime) {
     // check that goal door is open
     if (this.score >= this.goalPoints && !this.goalOpen) {
         this.goalOpen = true;
-        document.getElementById("game_notes").innerHTML = "+100 - IF you go through my door and end this!";
+        document.getElementById("game-notes").innerHTML = "+100 - IF you go through my door and end this!";
         var sfx = new Audio("audio/door.wav");
         sfx.play();
     }
@@ -361,19 +361,19 @@ GameController.prototype.spawnPickups = function () {
 var charName = window.location.search.substring(1);
 switch (charName) {
     case 'cat':
-        var spriteURL = 'images/char-cat-girl.png';
+        var spriteURL = 'images/char-cat-sketch.png';
         break;
     case 'horn':
-        var spriteURL = 'images/char-horn-girl.png';
+        var spriteURL = 'images/char-girl-sketch.png';
         break;
     case 'pink':
-        var spriteURL = 'images/char-pink-girl.png';
+        var spriteURL = 'images/char-pink-sketch.png';
         break;
     case 'princess':
-        var spriteURL = 'images/char-princess-girl.png'; 
+        var spriteURL = 'images/char-princess-sketch.png'; 
         break;
     default:
-        var spriteURL = 'images/char-boy.png'
+        var spriteURL = 'images/char-boy-sketch.png'
         break;
 }
 

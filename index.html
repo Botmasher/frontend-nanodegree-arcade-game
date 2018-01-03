@@ -6,52 +6,54 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<h1 id="title">Avoid Bug! Touch Water!!</h1>
-	<h2 id="sub">a game by <a href="https://classroom.udacity.com/courses/ud015/lessons/3072058665/concepts/31018886370923">Udacity</a> and <a href="https://www.github.com/Botmasher/">Botmasher (Joshua R)</a></h2>
 
-	<!-- game characters (sprites) for player to choose from -->
-	<img src="images/char-princess-girl.png">
-	<input name="char" type="radio" value="princess"> Principessa</input>
+	<h1 id="title">Avoid Bug! Touch Water!</h1>
 
-	<img src="images/char-boy.png">
-	<input name="char" type="radio" value="boy"> Boynco</input>
+	<div class="char-select">
+		<div class="char-select-row">
+			<img src="images/char-princess-sketch.png">
+			<input name="char" type="radio" value="princess"> Principessa</input>
+		</div>
+		<div class="char-select-row">
+			<img src="images/char-boy-sketch.png">
+			<input name="char" type="radio" value="boy"> Boynco</input>
+		</div>
+		<div class="char-select-row">
+			<img src="images/char-cat-sketch.png">
+			<input name="char" type="radio" value="cat"> Catanya</input>
+		</div>
+		<div class="char-select-row">
+			<img src="images/char-girl-sketch.png">
+			<input name="char" type="radio" value="horn"> Cornucapia</input>
+		</div>
+		<div class="char-select-row">
+			<img src="images/char-pink-sketch.png">
+			<input name="char" type="radio" value="pink"> Pinka</input>
+		</div>
+	</div>
 
-	<img src="images/char-cat-girl.png">
-	<input name="char" type="radio" value="cat"> Catanya</input>
+	<div class="game-start">
+		<p><button id="start_game" name="start">Start game!</button></p>
+	</div>
 
-	<img src="images/char-horn-girl.png">
-	<input name="char" type="radio" value="horn"> Cornucapia</input>
-
-	<img src="images/char-pink-girl.png">
-	<input name="char" type="radio" value="pink"> Pinka</input>
-
-	<br><br>
-	<p><button id="start_game" name="start">Start up this game!</button></p>
-
-	<p>
-	Art and basic engine from Udacity. Gameplay by Botmasher (Joshua R).
-	<br>
-	Music by Kevin MacLeod (incompetech.com) and Jason Shaw (audionautix.com).
-	</p>
-
+	<div class="footer">
+		<p>Gameplay and art by <a href="https://www.github.com/Botmasher/">Botmasher (Joshua R)</a>. Basic engine modified from <a href="https://classroom.udacity.com/courses/ud015/lessons/3072058665/concepts/31018886370923">Udacity</a>.</p>
+		<p>Music by Kevin MacLeod (incompetech.com) and Jason Shaw (audionautix.com).</p>
+	</div>
+	
 	<script type="text/JavaScript">
-	// play some music
 	var music = new Audio('audio/music2.mp3');
 	music.play();
 	
-	// listen for button click
+	// determine the character selected by the user
 	document.getElementById("start_game").addEventListener("click", function(e){
-		
-		// determine the character selected by the user
 		var selectedChar;
-		// search through radio buttons for active one
 		for (var i=0; i<document.getElementsByTagName("input").length; i++) {
 			if (document.getElementsByTagName("input")[i].checked) {
 				selectedChar = document.getElementsByTagName("input")[i].value;
 			}
 		}
-
-		// load the game page - pass player char as parameter
+		// load the game page passing player char
 		window.location = "game.html?"+selectedChar;
 		return false;
 	});

@@ -1,26 +1,48 @@
 body {
-    text-align: center;
-    font-family: Helvetica, sans-serif;
-    color: gray;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  color: gray;
 }
 
 /* index.html */
-h1#title {
+h1 #title {
 	color: #777FFF;
 	font-size: 42px;
 }
 
-h2#sub {
-	font-style: italic;
-	font-size: 20px;
+.char-select {
+	text-align: center;
+}
+
+.char-select-row {
+	display: inline-block;
+	margin: 1%;
+}
+
+.char-select img {
+	display: block;
+}
+
+.game-start button {
+	font-size: 22px;
+	padding: 10px;
+	border-radius: 8px;
 }
 
 /* game.html */
-#game_score {
+#game-lives {
+	margin-bottom: -30px;
+}
+
+#game-lives img {
+	width: 4%;
+}
+
+#game-score {
 	font-weight: bold;
 }
 
-#game_notes {
+#game-notes {
 	color: gray;
 	margin: 20px 0 -20px 0;
 }

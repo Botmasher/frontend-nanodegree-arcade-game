@@ -1,63 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Effective JavaScript: Frogger</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+	<head>
+  	  <meta charset="UTF-8">
+   	 <title>Avoid Bug Touch Water - an Effective JS project</title>
+   	 <link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet">
+   	 <link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
 
-	<h1 id="title">Avoid Bug! Touch Water!</h1>
+		<h1>Avoid Bug, Touch Water</h1>
 
-	<div class="char-select">
+		<!-- player character sprite selection -->
 		<div class="char-select-row">
-			<img src="images/char-princess-sketch.png">
-			<input name="char" type="radio" value="princess"> Principessa</input>
+			<div class="char-select-item" id="princess">
+				<p>
+					<img src="images/char-princess-sketch.png">
+					Principessa
+				</p>
+			</div>
+			<div class="char-select-item" id="boy">
+				<p>
+					<img src="images/char-boy-sketch.png">
+					Boynco
+				</p>
+			</div>
+			<div class="char-select-item" id="cat">
+				<p>
+					<img src="images/char-cat-sketch.png">
+					Catanya
+				</p>
+			</div>
+			<div class="char-select-item" id="horn">
+				<p>
+					<img src="images/char-girl-sketch.png">
+					Cornutails
+				</p>
+			</div>
+			<div class="char-select-item" id="pink">
+				<p>
+					<img src="images/char-pink-sketch.png">
+					Pinkwe
+				</p>
+			</div>
 		</div>
-		<div class="char-select-row">
-			<img src="images/char-boy-sketch.png">
-			<input name="char" type="radio" value="boy"> Boynco</input>
-		</div>
-		<div class="char-select-row">
-			<img src="images/char-cat-sketch.png">
-			<input name="char" type="radio" value="cat"> Catanya</input>
-		</div>
-		<div class="char-select-row">
-			<img src="images/char-girl-sketch.png">
-			<input name="char" type="radio" value="horn"> Cornucapia</input>
-		</div>
-		<div class="char-select-row">
-			<img src="images/char-pink-sketch.png">
-			<input name="char" type="radio" value="pink"> Pinka</input>
-		</div>
-	</div>
 
-	<div class="game-start">
-		<p><button id="start_game" name="start">Start game!</button></p>
-	</div>
+		<div class="game-start">
+			<button id="start-game" name="start">Start game!</button>
+		</div>
 
-	<div class="footer">
-		<p>Gameplay and art by <a href="https://www.github.com/Botmasher/">Botmasher (Joshua R)</a>. Basic engine modified from <a href="https://classroom.udacity.com/courses/ud015/lessons/3072058665/concepts/31018886370923">Udacity</a>.</p>
-		<p>Music by Kevin MacLeod (incompetech.com) and Jason Shaw (audionautix.com).</p>
-	</div>
-	
-	<script type="text/JavaScript">
-	var music = new Audio('audio/music2.mp3');
-	music.play();
-	
-	// determine the character selected by the user
-	document.getElementById("start_game").addEventListener("click", function(e){
-		var selectedChar;
-		for (var i=0; i<document.getElementsByTagName("input").length; i++) {
-			if (document.getElementsByTagName("input")[i].checked) {
-				selectedChar = document.getElementsByTagName("input")[i].value;
-			}
-		}
-		// load the game page passing player char
-		window.location = "game.html?"+selectedChar;
-		return false;
-	});
-	</script>
+		<div class="footer">
+			<p>Gameplay and art by <a href="https://github.com/Botmasher/frontend-nanodegree-arcade-game">Botmasher (Joshua R)</a>. Basic engine modified from <a href="https://classroom.udacity.com/courses/ud015/lessons/3072058665/concepts/31018886370923">Udacity</a>.</p>
+			<p>Music by Kevin MacLeod (incompetech.com) and Jason Shaw (audionautix.com).</p>
+		</div>
+		
+		<script type="text/JavaScript">
+			const music = new Audio('audio/music2.mp3');
+			music.play();
+			// determine the character selected by the user
+			document.getElementById('start-game').addEventListener('click', function(e){
+				let selectedChar;
+				for (let i=0; i<document.getElementsByTagName('input').length; i++) {
+					if (document.getElementsByTagName('input')[i].checked) {
+						selectedChar = document.getElementsByTagName('input')[i].value;
+					}
+				}
+				// load the game page passing player char
+				window.location = `game.html?${selectedChar}`;
+				return false;
+			});
+			// determine the selected character
+			const charDivs = Array.prototype.slice.call(document.getElementsByClassName('char-select-item'));
+			charDivs.map(char => char.addEventListener('click', () => {
+				// load the game page passing player char
+				window.location = `game.html?${char.id}`;
+				return false;
+			}));
+		</script>
 
-</body>
+	</body>
 </html>

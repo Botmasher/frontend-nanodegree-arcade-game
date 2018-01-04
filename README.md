@@ -22,7 +22,7 @@ This project was forked and modified from a Udacity project in order to complete
 - platform: Udacity
 - forked by: Botmasher (Joshua R) to complete the final project for Udacity OO JS
 
-OO JS students are expected to follow this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) and this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+As an OO JS project, this game was expected to follow this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) and this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
 
 I returned to this game in early 2018 to update the art and interface, setting it apart somewhat from the original course project. The basic game rules are not changed from the intended goals of frontend-nanodegree-arcade-game, though extra features like scoring and exiting the level are added.
 

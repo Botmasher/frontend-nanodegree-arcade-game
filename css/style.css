@@ -4,32 +4,50 @@ body {
   color: gray;
 }
 
-/* index.html */
-h1 #title {
+/* index */
+
+h1 {
+	font-family: 'Coming Soon', sans-serif;
 	color: #777FFF;
 	font-size: 42px;
 }
 
-.char-select {
+.char-select-row {
 	text-align: center;
 }
 
-.char-select-row {
+.char-select-row img {
+	display: block;
+}
+
+.char-select-item {
 	display: inline-block;
 	margin: 1%;
 }
 
-.char-select img {
-	display: block;
+.char-select-item p {
+	padding: 10px;
+	margin-top: -15px;
 }
 
-.game-start button {
+.char-select-item :hover {
+	background-color: #feeffe;
+	cursor: pointer;
+}
+
+button {
 	font-size: 22px;
 	padding: 10px;
 	border-radius: 8px;
+	margin: 10px;
+	margin-bottom: 25px;
+}
+button:hover {
+	background-color: #777FFF;
 }
 
-/* game.html */
+/* game */
+
 #game-lives {
 	margin-bottom: -30px;
 }
@@ -45,4 +63,18 @@ h1 #title {
 #game-notes {
 	color: gray;
 	margin: 20px 0 -20px 0;
+}
+
+/* gameover */
+
+#final-score {
+	font-size: 35px;
+	margin-bottom: 0;
+}
+
+#score {
+	color: #777FFF;
+	margin-top: 0;
+	font-size: 100px;
+	margin-bottom: 20px;
 }
